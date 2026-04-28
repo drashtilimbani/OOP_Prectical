@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class pr2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Prompt user for coefficients
+        System.out.print("Enter a, b, c, d, e, f: ");
+        double a = input.nextDouble();
+        double b = input.nextDouble();
+        double c = input.nextDouble();
+        double d = input.nextDouble();
+        double e = input.nextDouble();
+        double f = input.nextDouble();
+
+        // Calculate determinants
+        double D = a * d - b * c;
+        double Dx = e * d - b * f;
+        double Dy = a * f - e * c;
+
+        // Check if solution exists
+        if (D == 0) {
+            System.out.println("The system has no unique solution (D = 0).");
+        } else {
+            double x = Dx / D;
+            double y = Dy / D;
+
+            // Display results
+            System.out.println("Solution:");
+            System.out.println("x = " + x);
+            System.out.println("y = " + y);
+        }
+
+        input.close();
+    }
+}
